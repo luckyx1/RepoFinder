@@ -45,11 +45,9 @@ class GithubRepo: CustomStringConvertible {
                 self.ownerAvatarURL = ownerAvatarURL
             }
         }
-        
-        if let repoDescription = jsonResult["description"] as? String {
+        if let repoDescription = jsonResult["description"] as? String{
             self.repoDescription = repoDescription
         }
-        
     }
     
     // Actually fetch the list of repositories from the GitHub API.
@@ -106,6 +104,5 @@ class GithubRepo: CustomStringConvertible {
             "\n\t[Owner: \(self.ownerHandle!)]" +
             "\n\t[Avatar: \(self.ownerAvatarURL!)]" +
             "\n\t[Description: \(self.repoDescription!)]"
-        
     }
 }
