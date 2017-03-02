@@ -38,14 +38,17 @@ class SearchSettingsViewController: UIViewController {
     }
     */
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
-        self.delegate?.didSaveSettings(settings: self.settings)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.settings.minStars = Int(self.starSlider.value)
+            self.delegate?.didSaveSettings(settings: self.settings)
+        }
 
     }
     
     @IBAction func cancelButtonTapped(sender: UIBarButtonItem) {
-        self.delegate?.didCancelSettings()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.delegate?.didCancelSettings()
+        }
     }
     
 

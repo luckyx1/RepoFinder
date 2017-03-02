@@ -90,6 +90,8 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func didSaveSettings(settings: GithubRepoSearchSettings) {
+        self.searchSettings = settings
+        self.doSearch()
     }
     
     func didCancelSettings() {
